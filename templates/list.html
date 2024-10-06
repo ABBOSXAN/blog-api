@@ -4,6 +4,10 @@
 
 {% block content %}
 <h2>So'nggi maqolalar</h2>
+{% if user.is_authenticated %}
+    <p>Hello, {{user.username}</p>
     {% for post in posts %}
-        {{post.title}}...<a href="{{post.get_absolute_url}}">Read more</a>
+<p>{{post.title}}...</p><a href="{{post.get_absolute_url}}">Read more</a>
+    {% endfor %}
+{% endif %}
 {% endblock %}

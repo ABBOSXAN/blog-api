@@ -3,23 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>XAN BLOG</title>
-<!--    <link rel="stylesheet" href="{% static 'css/base.css' %}">-->
 </head>
 <body>
 
 <header>
-    <h2><a href="{% url '/' %}">XAN BLOG</a></h2>
+    <h2><a href="/">XAN BLOG</a></h2>
 </header>
-
-<!--{% if user.is_authenticated %}-->
-<!--    <p>{{user.username}}, xush kelibsiz!</p>-->
-<!--    <p><a href="{% url 'logout' %}">Chiqish</a></p>-->
-<!--{% else %}-->
-<!--<p>-->
-<!--    <a href="{% url 'login' %}">Saytga kirish</a>-->
-<!--    <a href="{% url 'signup' %}">Ro'yhatdan o'tish</a>-->
-<!--</p>-->
-<!--{% endif %}-->
 
 <div>
     {% block content %}
@@ -27,7 +16,7 @@
 </div>
 
 <footer>
-    <h2><a href="{% url '/' %}">Yangi post yaratish</a></h2>
+    <h2><a href="{% url 'create' %}">Yangi post yaratish</a></h2>
 </footer>
 
 </body>
