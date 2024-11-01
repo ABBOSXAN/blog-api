@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'drf_spectacular',
+    'django_filters',
     'posts.apps.PostsConfig',
 
 ]
@@ -64,6 +66,9 @@ REST_FRAMEWORK={
         # 'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
+    'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 SIMPLE_JWT = {
@@ -77,6 +82,12 @@ CORS_ALLOWED_ORIGINS=[
     'http://localhost:8000',
     'http://localhost:3000',
 ]
+
+SPECTACULAR_SETTINGS={
+    "TITLE": "API dokumentatsiya",
+    'DESCRIPTION': 'Django Rest Frameworkdagi blog project',
+    'VERSION': '1.0.0',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
